@@ -25,16 +25,20 @@ document.querySelector('.language-container').addEventListener('click',function(
     if(e.target.classList.contains('first-language')){
 
          // for yoda
-        mainURL= `https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json?text=${textInput.value}`;
+        mainURL= `https://api.funtranslations.com/translate/yoda.json?text=${textInput.value}`;
+        console.log(mainURL);
     }else if(e.target.classList.contains('second-language')){
         
         // pirate
-        mainURL= `https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json?text=${textInput.value}`;
+        mainURL= `	https://api.funtranslations.com/translate/pirate.json?text=${textInput.value}`;
+
+        console.log(mainURL);
     }else if(e.target.classList.contains('third-language')){
 
         // minion
-        mainURL= `https://api.funtranslations.com/translate/minion.json
-        ?text=${textInput.value}`;
+        mainURL= `https://api.funtranslations.com/translate/valyrian.json?text=${textInput.value}`;
+
+        console.log(mainURL);
     }
    }
 });
@@ -42,11 +46,20 @@ document.querySelector('.language-container').addEventListener('click',function(
 
 
 
+
+
 convertBtn.addEventListener('click',function(){
 
-    let text;
-    fetch(mainURL).then((response)=>response.json()).then((json)=>console.log(json)).catch((error)=>console.log(`error:${error}`));
+    console.log(mainURL);
+   
+    fetch(mainURL).then((response)=>response.json()).then((json)=> outputText.textContent=json.contents.translated)
+
+    
 
   
 });
 
+
+// function errorHandle(error){
+//     alert('try again after sometime');
+// }
