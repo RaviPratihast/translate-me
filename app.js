@@ -36,7 +36,7 @@ document.querySelector('.language-container').addEventListener('click',function(
     }else if(e.target.classList.contains('third-language')){
 
         // minion
-        mainURL= `https://api.funtranslations.com/translate/valyrian.json?text=${textInput.value}`;
+        mainURL= `https://api.funtranslations.com/translate/ferb-latin.json?text=${textInput.value}`;
 
         console.log(mainURL);
     }
