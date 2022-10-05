@@ -95,3 +95,11 @@ body{
     border: none;
     border-radius: 10px;
 }
+
+
+/* active color */
+
+.active{
+    background-color: var(--border-color);
+    
+}
