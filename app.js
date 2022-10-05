@@ -33,6 +33,7 @@ document.querySelector('.language-container').addEventListener('click',function(
        firstLanguage.classList.add('active');
       
         secondLanguage.classList.remove('active');
+        thirdLanguage.classList.remove('active');
 
 
         mainURL= `https://api.funtranslations.com/translate/yoda.json?text=${textInput.value}`;
