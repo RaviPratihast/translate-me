@@ -52,7 +52,7 @@ convertBtn.addEventListener('click',function(){
 
     console.log(mainURL);
    
-    fetch(mainURL).then((response)=>response.json()).then((json)=> outputText.textContent=json.contents.translated)
+    fetch(mainURL).then((response)=>response.json()).then((json)=> outputText.textContent=json.contents.translated).catch((error)=> alert(`${error.message}, Try again after sometime`));
 
     
 
