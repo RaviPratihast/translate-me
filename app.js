@@ -10,6 +10,11 @@ const minionSpeak=document.querySelector('.third-language');
 const outputText=document.querySelector('.converted-text');
 const convertBtn=document.querySelector('#convert');
 
+// languages
+const firstLanguage=document.querySelector('.first-language');
+const secondLanguage=document.querySelector('.second-language');
+const thirdLanguage=document.querySelector('.third-language');
+
 
 let mainURL='';
 
@@ -20,21 +25,33 @@ let mainURL='';
 document.querySelector('.language-container').addEventListener('click',function(e){
    if(e.target.classList.contains('lang')){
     
+    
 
    
     if(e.target.classList.contains('first-language')){
 
-         // for yoda
+       firstLanguage.classList.add('active');
+      
+        secondLanguage.classList.remove('active');
+
+
         mainURL= `https://api.funtranslations.com/translate/yoda.json?text=${textInput.value}`;
         console.log(mainURL);
     }else if(e.target.classList.contains('second-language')){
-        
+       
+        secondLanguage.classList.add('active');
+        firstLanguage.classList.remove('active');
+        thirdLanguage.classList.remove('active');
+
         // pirate
         mainURL= `	https://api.funtranslations.com/translate/pirate.json?text=${textInput.value}`;
 
         console.log(mainURL);
     }else if(e.target.classList.contains('third-language')){
 
+        thirdLanguage.classList.add('active');
+        secondLanguage.classList.remove('active');
+        firstLanguage.classList.remove('active');
         // minion
         mainURL= `https://api.funtranslations.com/translate/ferb-latin.json?text=${textInput.value}`;
 
